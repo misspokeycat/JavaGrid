@@ -26,8 +26,52 @@ public class Node {
 	public Object getData(){
 		return storedData;
 	}
+	public int getXpos() {
+		return xpos;
+	}
+	public int getYpos() {
+		return ypos;
+	}
 	public void setData(Object data){
 		storedData = data;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((storedData == null) ? 0 : storedData.hashCode());
+		result = prime
+				* result
+				+ ((storedParentGrid == null) ? 0 : storedParentGrid.hashCode());
+		result = prime * result + xpos;
+		result = prime * result + ypos;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Node other = (Node) obj;
+		if (storedData == null) {
+			if (other.storedData != null)
+				return false;
+		} else if (!storedData.equals(other.storedData))
+			return false;
+		if (storedParentGrid == null) {
+			if (other.storedParentGrid != null)
+				return false;
+		} else if (!storedParentGrid.equals(other.storedParentGrid))
+			return false;
+		if (xpos != other.xpos)
+			return false;
+		if (ypos != other.ypos)
+			return false;
+		return true;
 	}
 	public Grid getParentGrid(){
 		return storedParentGrid;
