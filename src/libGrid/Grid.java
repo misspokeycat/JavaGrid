@@ -1,3 +1,4 @@
+package libGrid;
 //Grid.java
 //A grid full of data nodes, essentially a two-dimensional array with helpers for traversal/filling.
 public class Grid {

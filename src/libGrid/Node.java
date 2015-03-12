@@ -1,3 +1,4 @@
+package libGrid;
 //Node.java
 //A data node to be stored in a grid.
 public class Node {
